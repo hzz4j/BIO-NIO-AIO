@@ -1,7 +1,6 @@
 package edu.hzz.nio.client;
 
 import java.io.IOException;
-import java.nio.channels.SocketChannel;
 import java.util.Scanner;
 
 public class UserInputHandler implements Runnable{
