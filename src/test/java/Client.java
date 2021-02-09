@@ -1,9 +1,8 @@
-import edu.hzz.webserver.server.ConnectionUtils;
+import edu.hzz.webserver.server.connector.ConnectionUtils;
 
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
-import java.net.InetSocketAddress;
 import java.net.Socket;
 
 public class Client {
@@ -13,7 +12,9 @@ public class Client {
 
 
             OutputStream outputStream = socket.getOutputStream();
-            outputStream.write(ConnectionUtils.REQUEST.getBytes());
+//            outputStream.write(ConnectionUtils.REQUEST.getBytes());
+
+            outputStream.write("GET /servlet/TimeServlet HTTP/1.1".getBytes());
             //  关闭输出流，两个效果
             //  1. 对客户端而言，节省资源
             //  2. 对服务端而言，不用一直阻塞在read
